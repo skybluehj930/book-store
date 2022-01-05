@@ -16,7 +16,7 @@ public class ContractorEntity {
 	
 	private Date contractAt; // 계약일자
 	
-	private String lowest; // 최저가 비율
+	private Integer lowest; // 최저가 비율
 	
 	private String stateCd; // 상태 코드
 
@@ -37,11 +37,11 @@ public class ContractorEntity {
 		this.contractAt = contractAt;
 	}
 
-	public String getLowest() {
+	public Integer getLowest() {
 		return lowest;
 	}
 
-	public void setLowest(String lowest) {
+	public void setLowest(Integer lowest) {
 		this.lowest = lowest;
 	}
 
