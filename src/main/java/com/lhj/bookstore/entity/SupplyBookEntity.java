@@ -6,8 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-//@Entity
+@Entity
+@Table(name = "supply_book")
 public class SupplyBookEntity {
 
 	@Id // pk
@@ -15,14 +17,13 @@ public class SupplyBookEntity {
     private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "cont_id")
-	private SupplyEntity supplyEntity; // 공급번호
+	@JoinColumn(name = "supply_id")
+	private SupplyEntity supply; // 공급번호
 	
 	@ManyToOne
-	@JoinColumn(name = "book_id")
-	private BookInfoEntity bookInfoEntity; // 도서번호
+	@JoinColumn(name = "book_info_id")
+	private BookInfoEntity bookInfo; // 도서번호
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -31,21 +32,20 @@ public class SupplyBookEntity {
 		this.id = id;
 	}
 
-	public SupplyEntity getSupplyEntity() {
-		return supplyEntity;
+	public SupplyEntity getSupply() {
+		return supply;
 	}
 
-	public void setSupplyEntity(SupplyEntity supplyEntity) {
-		this.supplyEntity = supplyEntity;
+	public void setSupply(SupplyEntity supply) {
+		this.supply = supply;
 	}
 
-	public BookInfoEntity getBookInfoEntity() {
-		return bookInfoEntity;
+	public BookInfoEntity getBookInfo() {
+		return bookInfo;
 	}
 
-	public void setBookInfoEntity(BookInfoEntity bookInfoEntity) {
-		this.bookInfoEntity = bookInfoEntity;
+	public void setBookInfo(BookInfoEntity bookInfo) {
+		this.bookInfo = bookInfo;
 	}
-	
 	
 }

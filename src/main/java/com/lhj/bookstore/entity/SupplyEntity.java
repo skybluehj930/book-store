@@ -8,8 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-//@Entity
+@Entity
+@Table(name = "supply")
 public class SupplyEntity {
 	
 	@Id // pk
@@ -17,12 +19,11 @@ public class SupplyEntity {
     private Long id; // 공급번호
 	
 	@ManyToOne
-	@JoinColumn(name = "cont_id")
-	private ContractorEntity contractorEntity; // 계약번호
+	@JoinColumn(name = "contractor_id")
+	private ContractorEntity contractor; // 계약번호
 	
-	private Date supply_at; // 공급일자
+	private Date supplyAt; // 공급일자
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -31,21 +32,21 @@ public class SupplyEntity {
 		this.id = id;
 	}
 
-	public ContractorEntity getContractorEntity() {
-		return contractorEntity;
+	public ContractorEntity getContractor() {
+		return contractor;
 	}
 
-	public void setContractorEntity(ContractorEntity contractorEntity) {
-		this.contractorEntity = contractorEntity;
+	public void setContractor(ContractorEntity contractor) {
+		this.contractor = contractor;
 	}
 
-	public Date getSupply_at() {
-		return supply_at;
+	public Date getSupplyAt() {
+		return supplyAt;
 	}
 
-	public void setSupply_at(Date supply_at) {
-		this.supply_at = supply_at;
+	public void setSupplyAt(Date supplyAt) {
+		this.supplyAt = supplyAt;
 	}
-	
+
 	
 }
